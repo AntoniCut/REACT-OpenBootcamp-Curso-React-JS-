@@ -8,6 +8,16 @@
   flex-direction: column;
   text-align: center;
   background-color: #282C34;
+  height: 100vh;
+}
+
+.separador {
+  display: block;
+  width: 90%;
+  height: 50px;
+  background-color: #61DAFB; 
+  margin-top: 50px;
+
 }
 
 .componentes {
