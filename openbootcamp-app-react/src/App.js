@@ -3,28 +3,31 @@
 //  **********************************************************
 
 
-import logo from './logo.svg';
 import './App.css';
+import { HeaderComponent } from './ComponentsMain/HeaderComponent/HeaderComponent';
+import { CursoComponent } from './ComponentsMain/CursoComponent/CursoComponent';
+import { ProyectoFinalComponent } from './ComponentsMain/ProyectoFinalComponent/ProyectoFinalComponent';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+//  **********  Componente Padre o Principal - App()  **********
+export const App = () => {
+
+    return (
+
+        <div className="App">
+
+            {/* *****  Cabecera del Proyecto  ***** */}
+            <HeaderComponent />
+
+            {/* *****  Ejercicios del Proyecto  ***** */}
+            <CursoComponent />
+
+            {/* *****  Proyecto Final  ***** */}
+            <ProyectoFinalComponent />
+
+
+        </div>
+    );
 }
 
-export default App;
+
