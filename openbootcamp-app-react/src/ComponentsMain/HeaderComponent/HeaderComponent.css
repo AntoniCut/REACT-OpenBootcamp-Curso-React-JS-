@@ -1,46 +1,44 @@
-/*  ****************************************************************************************  */
-/*  **********  /openbootcamp/src/components/HeaderComponent/HeaderComponent.css  **********  */
-/*  ****************************************************************************************  */
+/*  ********************************************************************************************  */
+/*  **********  /openbootcamp/src/ComponentsMain/HeaderComponent/HeaderComponent.css  **********  */
+/*  ********************************************************************************************  */
 
 
 .App-header {
-   background-color: #282c34;
-   /* min-height: 170px; */
-   max-height: 250px;
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: center;
-   gap: 200px;
-   /* justify-content: space-around; */
-   /* font-size: calc(50px + 2vmin); */
-   color: white;
-   border: 5px solid #61dafb;
+    background-color: #282c34;
+    max-height: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    /* justify-content: space-around; */
+    /* font-size: calc(50px + 2vmin); */
+    color: white;
+    border: 5px solid #61dafb;
 }
 
 .App-logo {
     height: 200px;
     pointer-events: none;
- }
+}
 
- @media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
     .App-logo {
-      animation: App-logo-spin infinite 15s linear;
+        animation: App-logo-spin infinite 15s linear;
     }
-  }
-  
-  
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+}
 
- h1, h2 {
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+h1 {
     color: transparent;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: #ffffff;
@@ -48,6 +46,4 @@
     /* font-weight: bold; */
     text-align: center;
     /* margin: 0 200px; */
- }
-
- 
+}
