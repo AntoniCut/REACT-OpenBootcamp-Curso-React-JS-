@@ -24,7 +24,7 @@ export const GreetingFunction = (props) => {
 
         <div className="componentes">
             
-            <h2> -----  GreetingFunction - Soy un Componente Funcional  ----- </h2>
+            <h2 className='titulo-componente'> -----  GreetingFunction - Soy un Componente Funcional  ----- </h2>
             <h3> ¡Hola, soy {props.name} y tengo {age} años! </h3>
             <button onClick={birthday}> Cumplir Años </button>
 

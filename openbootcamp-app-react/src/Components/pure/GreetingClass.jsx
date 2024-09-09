@@ -34,7 +34,7 @@ export default class GreetingClass extends Component {
             
             <div className='componentes'>
 
-                <h2> -----  GreetingClass - Soy un Componente de Clase  ----- </h2>
+                <h2 className='titulo-componente'> -----  GreetingClass - Soy un Componente de Clase  ----- </h2>
                 <h3> ¡Hola, soy {this.props.name} y tengo {this.state.age} años! </h3>
                 <button onClick={this.birthday}> Cumplir Años </button>
 

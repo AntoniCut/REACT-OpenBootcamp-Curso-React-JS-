@@ -23,7 +23,7 @@ export const TaskListComponent = () => {
 
         <div className='componentes'>
 
-            <h2> Lista de Tareas </h2>
+            <h2 className='titulo-componente'> ----- Lista de Tareas ----- </h2>
 
             {/* TODO: Aplicar un Map para Renderizar una Lista de Tareas */}
             <TaskComponent task={defaultTask} />
