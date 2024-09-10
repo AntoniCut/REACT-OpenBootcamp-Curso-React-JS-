@@ -12,9 +12,9 @@ export const ProyectoFinalComponent = () => {
 
     return (
 
-        <main className='proyecto-final'>
+        <main>
 
-            <h1> Proyecto Final de React OpenBootcamp </h1>
+            <h1 style={{marginTop: '50px'}}> Proyecto Final de React OpenBootcamp </h1>
 
             {/* *****  Componente de Listado de Tareas  ***** */}
             <TaskListComponent />

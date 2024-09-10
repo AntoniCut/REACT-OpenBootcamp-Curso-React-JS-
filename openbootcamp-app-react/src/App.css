@@ -64,5 +64,13 @@ button:hover {
     background-color: blueviolet;
 }
 
+th, 
+td {
+    width: 200px;
+}
+
+
+
+
 
 /*  *****  RESPONSIVE  *****  */
