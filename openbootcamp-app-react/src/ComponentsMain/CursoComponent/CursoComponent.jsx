@@ -18,6 +18,7 @@ import { DidUpdateClass, DidUpdatetHook } from '../../hooks/lifecycle/DidUpdate.
 import { WillUnMounthClass, WillUnMountHook } from '../../hooks/lifecycle/WillUnmount.jsx';
 import { TituloCapitulosCurso } from './TituloCapitulosCurso.jsx';
 import { AllCycles } from '../../hooks/lifecycle/AllCycles.jsx';
+import { GreetingStyled } from '../../Components/pure/greetingStyled.jsx';
 
 
 //  **********  Componente Principal de los Ejercicios del Curso  **********
@@ -28,7 +29,7 @@ export const CursoComponent = () => {
         <main className='curso-react'>
 
             <h1> Curso de React OpenBootcamp </h1>
-                       
+
             {/* *****  Componente de Clase y Componentes Funcionales  ***** */}
             <TituloCapitulosCurso titulo="Componentes de Clase y Componentes Funcionates" />
             <GreetingClass name="Antonio" />
@@ -41,15 +42,15 @@ export const CursoComponent = () => {
             <Ejemplo2Caso2 />
             <Ejemplo2Caso3 />
             <MiComponenteConContexto />
-            <Ejemplo4 nombre="Antonio Francisco"> 
-                <h3>Soy las Children del Componente Ejemplo 4 </h3> 
+            <Ejemplo4 nombre="Antonio Francisco">
+                <h3> Soy las Children del Componente Ejemplo 4 </h3>
             </Ejemplo4>
 
             {/* *****  Ciclo de Vida de los Componentes - Hooks  ***** */}
             <TituloCapitulosCurso titulo="Ciclo de Vida de los Componentes de Clase y Hooks" />
-            
+
             <LifeCycleExample />
-            
+
             <DidMountClass />
             <DidMountHook />
 
@@ -61,9 +62,14 @@ export const CursoComponent = () => {
 
             <AllCycles />
 
+            {/* *****  Estilos dentro de los componentes y Renderizado Condicional  ***** */}
+            <TituloCapitulosCurso titulo="Estilos - Renderizado Condicional" />
+            <GreetingStyled name='Antonio' />
+
+
             {/* *****  Separador Visual  ***** */}
             <div className='separador'> </div>
-            
+
         </main>
 
     )

@@ -3,6 +3,9 @@
 /*  ***********************************************************  */
 
 
+@import './styles/task.scss';
+
+
 .App {
     display: flex;
     flex-direction: column;

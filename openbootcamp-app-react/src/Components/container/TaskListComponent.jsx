@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { Task } from '../../models/task.class';
 import { LEVELS } from '../../models/levels.enum';
 import { TaskComponent } from '../pure/TaskComponent';
+import '../../styles/task.scss';
 
 
 //  **********  Componente Lista de Tareas  **********
@@ -43,7 +44,7 @@ export const TaskListComponent = () => {
 
         <div className='componentes'>
 
-            <h2 className='titulo-componente'> ----- Lista de Tareas ----- </h2>
+            <h2 className='titulo-componente task-title'> ----- Lista de Tareas ----- </h2>
 
             {/* TODO: Aplicar un Map para Renderizar una Lista de Tareas */}
             <TaskComponent task={defaultTask} />

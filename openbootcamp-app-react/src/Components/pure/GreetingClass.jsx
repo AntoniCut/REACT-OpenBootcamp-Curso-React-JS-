@@ -23,8 +23,7 @@ export default class GreetingClass extends Component {
             ({
                 age: prevState.age + 1
             })
-        
-        )
+        );
     }
 
 

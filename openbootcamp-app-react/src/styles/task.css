@@ -1,0 +1,28 @@
+/*  ********************************************************************  */
+/*  **********  /openbootcamp-app-react/src/styles/task.scss  **********  */
+/*  ********************************************************************  */
+.task-title {
+  color: cyan;
+}
+
+.task-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: cadetblue;
+}
+
+/*
+.task-action {
+    cursor: pointer;
+}
+
+.task-completed {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.task-pending {
+    font-weight: bold;
+    color: tomato;
+}
+*//*# sourceMappingURL=task.css.map */
