@@ -31,6 +31,10 @@
     background-color: rgb(101, 101, 109);
 }
 
+.color {
+    background-color: #aac7cf;
+}
+
 .titulo-componente {
     font-size: 36px;
 }

@@ -3,7 +3,7 @@
 //  ************************************************************************************
 
 
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { Task } from '../../models/task.class';
 import { LEVELS } from '../../models/levels.enum';
 import { TaskComponent } from '../pure/TaskComponent';
@@ -15,9 +15,29 @@ export const TaskListComponent = () => {
     //  -----  Creamos una Tarea y se la pasamos al componente TaskComponent
     const defaultTask = new Task('Example', 'Default Description', 'false', LEVELS.NORMAL);
 
-    const changeState = (id) => {
+
+    //  -----  Estado de los Componentes  -----
+    const [task, setTask] = useState({defaultTask});
+    const [loading, setLoading] = useState(true);
+   
+
+    //  -----  Control del Ciclo de Vida -----
+    useEffect(() => {
+        
+        console.log("\n");
+        console.warn('Task State has been modified');
+        setLoading(false);
+
+        return () => {
+            console.warn('TaskList component is going to unmount...');
+        };
+    }, [task]);
+
+
+    const changeCompleted = (id) => {
         console.log('TODO: Cambiar el estado de una tarea');
     }
+
 
     return (
 
@@ -29,6 +49,5 @@ export const TaskListComponent = () => {
             <TaskComponent task={defaultTask} />
 
         </div>
-    )
-
+    );
 }

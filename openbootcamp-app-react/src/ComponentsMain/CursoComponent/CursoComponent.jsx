@@ -12,6 +12,12 @@ import { Ejemplo2Caso2 } from '../../hooks/ejemplo2Caso2.jsx';
 import { Ejemplo2Caso3 } from '../../hooks/ejemplo2Caso3.jsx';
 import { MiComponenteConContexto } from '../../hooks/ejemplo3.jsx';
 import { Ejemplo4 } from '../../hooks/ejemplo4.jsx';
+import { LifeCycleExample } from '../../Components/pure/LifeCycleExample.jsx';
+import { DidMountClass, DidMountHook } from '../../hooks/lifecycle/DidMount.jsx';
+import { DidUpdateClass, DidUpdatetHook } from '../../hooks/lifecycle/DidUpdate.jsx';
+import { WillUnMounthClass, WillUnMountHook } from '../../hooks/lifecycle/WillUnmount.jsx';
+import { TituloCapitulosCurso } from './TituloCapitulosCurso.jsx';
+import { AllCycles } from '../../hooks/lifecycle/AllCycles.jsx';
 
 
 //  **********  Componente Principal de los Ejercicios del Curso  **********
@@ -22,14 +28,14 @@ export const CursoComponent = () => {
         <main className='curso-react'>
 
             <h1> Curso de React OpenBootcamp </h1>
-
-            {/* *****  Componente de Clase  ***** */}
+                       
+            {/* *****  Componente de Clase y Componentes Funcionales  ***** */}
+            <TituloCapitulosCurso titulo="Componentes de Clase y Componentes Funcionates" />
             <GreetingClass name="Antonio" />
-
-            {/* *****  Componente Funcional  ***** */}
             <GreetingFunction name="Antonio" />
 
             {/* *****  Ejemplos de Hooks  ***** */}
+            <TituloCapitulosCurso titulo="Ejemplos de Hooks" />
             <Ejemplo1 />
             <Ejemplo2Caso1 />
             <Ejemplo2Caso2 />
@@ -38,6 +44,22 @@ export const CursoComponent = () => {
             <Ejemplo4 nombre="Antonio Francisco"> 
                 <h3>Soy las Children del Componente Ejemplo 4 </h3> 
             </Ejemplo4>
+
+            {/* *****  Ciclo de Vida de los Componentes - Hooks  ***** */}
+            <TituloCapitulosCurso titulo="Ciclo de Vida de los Componentes de Clase y Hooks" />
+            
+            <LifeCycleExample />
+            
+            <DidMountClass />
+            <DidMountHook />
+
+            <DidUpdateClass />
+            <DidUpdatetHook />
+
+            <WillUnMounthClass />
+            <WillUnMountHook />
+
+            <AllCycles />
 
             {/* *****  Separador Visual  ***** */}
             <div className='separador'> </div>

@@ -1,29 +1,32 @@
-//  **********************************************************
-//  **********  /src/hooks/lifecycle/DidUpdate.jsx  **********
-//  **********************************************************
+//  *********************************************************************************
+//  **********  /openbootcamp-app-react/src/hooks/lifecycle/DidUpdate.jsx  **********
+//  *********************************************************************************
+
+
+import React, { Component, useEffect } from 'react';
+
 
 //  Ejemplo de uso del metodo componentDidUpdate 'ciclo de vida en componente clase'.
 //  Y uso del hook de         componentDidUpdate 'ciclo de vida en componente funcional'.
 
 
-import React, { Component, useEffect } from 'react'
-
-
 //  **********  Componente de tipo 'Clase'  **********
 
-export class DidUpdate extends Component {
+export class DidUpdateClass extends Component {
 
-  componentDidUpdate() {
-    console.log('Comportamiento cuando el componente recibe nuevos props o cambio en su estado privado')
-  }
-  
-  render() {
-    return (
-      <div>
-        <h1> DidUpdate </h1>
-      </div>
-    )
-  }
+    componentDidUpdateClass() {
+        console.log("\n");
+        console.warn('----- ComponentDidUpdateClass() ----- Comportamiento cuando el componente recibe nuevos props o cambio en su estado privado')
+    }
+
+    render() {
+        
+        return (
+            <div className='componentes'>
+                <h2 className='titulo-componente'> ----- DidUpdateClass ----- </h2>
+            </div>
+        )
+    }
 }
 
 
@@ -32,22 +35,13 @@ export class DidUpdate extends Component {
 export const DidUpdatetHook = () => {
 
     useEffect(() => {
-        console.log('Comportamiento cuando el componente recibe nuevos props o cambio en su estado privado')
+        console.log("\n");
+        console.warn('----- DidUpdateHook() ----- Comportamiento cuando el componente recibe nuevos props o cambio en su estado privado')
     })
 
     return (
-        <div>
-            <h1> DidUpdateHook </h1>
+        <div className='componentes'>
+            <h2 className='titulo-componente'> ----- DidUpdateHook ----- </h2>
         </div>
     )
 }
-
-
-
-
-
-
-
-
-
-

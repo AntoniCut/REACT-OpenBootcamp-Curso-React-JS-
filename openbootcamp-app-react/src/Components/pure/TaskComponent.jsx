@@ -5,10 +5,21 @@
 
 import propTypes from 'prop-types';
 import { Task } from '../../models/task.class';
+import { useEffect } from 'react';
 
 
 //  **********  Componente TaskComponent para Pintar una Tarea  **********
 export const TaskComponent = ({ task }) => {
+
+    useEffect(() => {
+        
+        console.log('\n');
+        console.warn('Create Task');
+        
+        return () => {
+            console.warn(`Task: ${task.name} is going to unmount`);
+        };
+    }, [task]);
 
     return (
 
