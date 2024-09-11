@@ -12,7 +12,7 @@ export const ProyectoFinalComponent = () => {
 
     return (
 
-        <main>
+        <main className='proyecto-final'>
 
             <h1 style={{marginTop: '50px'}}> Proyecto Final de React OpenBootcamp </h1>
 

@@ -9,6 +9,7 @@ import { LEVELS } from '../../models/levels.enum';
 import { TaskComponent } from '../pure/TaskComponent';
 import '../../styles/task.scss';
 import { TaskForm } from '../pure/forms/TaskForm';
+import Draggable from 'react-draggable';
 
 
 //  **********  Componente Lista de Tareas  **********
@@ -46,53 +47,56 @@ export const TaskListComponent = () => {
 
     return (
 
-        <div>
+        <div className='componentes'>
 
-            {/* -----  Estilos de Bootstrap  ----- */}
-            <div className='col-10 mx-auto' style={{ marginTop: '50px' }}>
+            <Draggable >
 
-                <div className='card'>
+                {/* -----  Estilos de Bootstrap  ----- */}
+                <div className='col-10 mx-auto'>
 
-                    <div className='card-header p-3'>
-                        <h5> ----- Lista de Tareas ----- </h5>
+                    <div className='card'>
+
+                        <div className='card-header p-3'>
+                            <h5> ----- Lista de Tareas ----- </h5>
+                        </div>
+
+                        <div className='card-body' data-mdb-perfect-scrollbar='true' style={{ position: 'relative', height: '400px' }} >
+
+                            <table className='table'>
+                                <thead>
+                                    <tr>
+                                        <th scope='col' style={{ width: '30%' }}> Title </th>
+                                        <th scope='col' style={{ width: '50%' }}> Description </th>
+                                        <th scope='col' style={{ width: '10%' }}> Priority </th>
+                                        <th scope='col' style={{ width: '10%' }}> Actions </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    {/* ----------  Itera sobre una lista de tareas  ---------- */}
+
+                                    {
+                                        tasks.map((task, index) => {
+                                            return (
+                                                <TaskComponent key={index} task={task} />
+                                            )
+                                        })
+                                    }
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
                     </div>
 
-                    <div className='card-body' data-mdb-perfect-scrollbar='true' style={{ position: 'relative', height: '400px' }} >
-
-                        <table className='table'>
-                            <thead>
-                                <tr>
-                                    <th scope='col' style={{ width: '30%' }}> Title </th>
-                                    <th scope='col' style={{ width: '50%' }}> Description </th>
-                                    <th scope='col' style={{ width: '10%' }}> Priority </th>
-                                    <th scope='col' style={{ width: '10%' }}> Actions </th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-
-                                {/* ----------  Itera sobre una lista de tareas  ---------- */}
-
-                                {
-                                    tasks.map((task, index) => {
-                                        return (
-                                            <TaskComponent key={index} task={task} />
-                                        )
-                                    })
-                                }
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
+                    <TaskForm />
 
                 </div>
 
-                <TaskForm />
-
-            </div>
-
+            </Draggable>
 
         </div>
     );
