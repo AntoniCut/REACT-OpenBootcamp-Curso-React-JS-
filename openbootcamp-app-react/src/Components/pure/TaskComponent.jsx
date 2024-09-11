@@ -9,9 +9,12 @@ import { useEffect } from 'react';
 import '../../styles/task.scss';
 import { LEVELS } from '../../models/levels.enum';
 
-//  **********  Componente TaskComponent para Pintar una Tarea  **********
-export const TaskComponent = ({ task }) => {
 
+//  **********  Componente TaskComponent para Pintar una Tarea  **********
+export const TaskComponent = ({ task, complete, remove }) => {
+
+
+    //  -----  Al Iniciar la Aplicación  -----
     useEffect(() => {
 
         console.log('\n');
@@ -22,31 +25,33 @@ export const TaskComponent = ({ task }) => {
         };
     }, [task]);
 
+
     //  -----  Función que devuelbe un 'badge' y depende del level de la tarea  -----
     const taskLevelBadge = () => {
 
         switch (task.level) {
 
             case LEVELS.NORMAL:
-                return (<h6 className='mb-0'> <span className='badge bg-primary'> {task.level} </span> </h6>)
+                return (<h6 className='mb-0'> <span className='badge bg-primary' style={{ fontSize: '16px' }}> {task.level} </span> </h6>)
 
             case LEVELS.URGENT:
-                return (<h6 className='mb-0'> <span className='badge bg-warning'> {task.level} </span> </h6>)
+                return (<h6 className='mb-0'> <span className='badge bg-warning' style={{ fontSize: '16px' }}> {task.level} </span> </h6>)
 
             case LEVELS.BLOCKING:
-                return (<h6 className='mb-0'> <span className='badge bg-danger'> {task.level} </span> </h6>)
+                return (<h6 className='mb-0'> <span className='badge bg-danger' style={{ fontSize: '16px' }}> {task.level} </span> </h6>)
             default:
                 break;
         }
     }
 
+
     //  -----Función que devuelve un icono en función de si la tarea esta completada o no  -----
     const taskIconCompleted = () => {
-        
-        return task.completed ? 
-            ( <i className='bi-toggle-on' style={{ color: 'green', fontSize: '28px' }}> </i>) 
-            : 
-            ( <i className='bi-toggle-off' style={{ color: 'gray', fontSize: '28px' }}> </i>  );
+
+        return task.completed ?
+            (<i onClick={() => complete(task)} className='bi-toggle-on task-action' style={{ color: 'green', fontSize: '28px' }}> </i>)
+            :
+            (<i onClick={() => complete(task)} className='bi-toggle-off task-action' style={{ color: 'gray', fontSize: '28px' }}> </i>);
     }
 
 
@@ -58,7 +63,7 @@ export const TaskComponent = ({ task }) => {
             <td style={{ width: '10%' }} className='align-middle'> {taskLevelBadge()} </td>
             <td style={{ width: '10%' }} className='align-middle'>
                 {taskIconCompleted()}
-                <i className='bi-trash' style={{ color: 'tomato', fontSize: '28px' }}> </i>
+                <i onClick={() => remove({ task })} className='bi-trash task-action' style={{ color: 'tomato', fontSize: '28px' }}> </i>
             </td>
         </tr>
     );
@@ -66,5 +71,7 @@ export const TaskComponent = ({ task }) => {
 
 
 TaskComponent.propTypes = {
-    task: propTypes.instanceOf(Task)
+    task: propTypes.instanceOf(Task).isRequired,
+    complete: propTypes.func.isRequired,
+    remove: propTypes.func.isRequired
 }

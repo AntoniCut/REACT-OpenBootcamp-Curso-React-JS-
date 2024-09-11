@@ -20,7 +20,7 @@ export const App = () => {
             <HeaderComponent />
 
             {/* *****  Ejercicios del Proyecto  ***** */}
-            <CursoComponent />
+            {/* <CursoComponent /> */}
 
             {/* *****  Proyecto Final  ***** */}
             <ProyectoFinalComponent />

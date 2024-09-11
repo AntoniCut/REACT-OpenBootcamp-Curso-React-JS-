@@ -40,9 +40,57 @@ export const TaskListComponent = () => {
     }, [tasks]);
 
 
-    const changeCompleted = (id) => {
-        console.log('TODO: Cambiar el estado de una tarea');
+
+    //  ----------  Logica de TAREAS  ----------
+
+    //  -----  Tarea Completada  -----
+    const completeTask = (task) => {
+
+        console.log("\n");
+        console.warn('-----  Complete this Task  -----', task);
+
+        const index = tasks.indexOf(task);       //  Obtenemos el indice de la tarea.
+        const tempTask = [...tasks];            //  variable temporal.
+        tempTask[index].completed = !tempTask[index].completed;
+
+        //  -----  Actualizamos el estado del componente y actualizara la iteración
+        //  -----  de las tareas en el orden para mostrar.
+        setTask(tempTask);
     }
+
+
+    //  -----  Tarea Eliminada  -----
+    const deleteTask = (task) => {
+
+        console.log("\n");
+        console.warn('-----  Delete this Task  -----', task);
+
+        const index = tasks.indexOf(task);       //  Obtenemos el indice de la tarea.
+        const tempTask = [...tasks];             //  variable temporal.
+        tempTask.splice(index, 1);               //  Eliminamos una tarea por indice.
+
+        //  -----  Actualizamos el estado del componente y actualizara la iteración
+        //  -----  de las tareas en el orden para mostrar.
+        setTask(tempTask);
+    }
+
+
+    //  ----------  Logica de TAREAS  ----------
+
+    //  -----  Crear Tarea  -----
+    const addTask = (task) => {
+
+        console.log("\n");
+        console.warn('-----  Añadir Tarea  -----', task);
+
+        //const index = tasks.indexOf(task);       //  Obtenemos el indice de la tarea.
+        const tempTask = [...tasks];            //  variable temporal.
+
+        //  -----  Añadimos tarea  -----
+        tempTask.push(task);
+        setTask(tempTask);
+    }
+
 
 
     return (
@@ -79,24 +127,25 @@ export const TaskListComponent = () => {
                                     {
                                         tasks.map((task, index) => {
                                             return (
-                                                <TaskComponent key={index} task={task} />
+                                                <TaskComponent
+                                                    key={index}
+                                                    task={task}
+                                                    complete={completeTask}
+                                                    remove={deleteTask}
+                                                />
                                             )
                                         })
                                     }
 
                                 </tbody>
-
                             </table>
-
                         </div>
-
                     </div>
-
-                    <TaskForm />
-
                 </div>
 
             </Draggable>
+
+            <TaskForm add={addTask} />
 
         </div>
     );
