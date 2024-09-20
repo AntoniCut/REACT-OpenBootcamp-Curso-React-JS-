@@ -15,7 +15,7 @@ import Draggable from 'react-draggable';
 //  **********  Componente Lista de Tareas  **********
 export const TaskListComponent = () => {
 
-    //  -----  Creamos una Tarea y se la pasamos al componente TaskComponent
+    //  -----  Creamos una Tarea y se la pasamos al componente TaskComponent  -----
     const defaultTask1 = new Task('Example1', 'Default Description 1', true, LEVELS.NORMAL);
     const defaultTask2 = new Task('Example2', 'Default Description 2', false, LEVELS.URGENT);
     const defaultTask3 = new Task('Example3', 'Default Description 3', true, LEVELS.BLOCKING);
@@ -38,7 +38,6 @@ export const TaskListComponent = () => {
             console.warn('TaskList component is going to unmount...');
         };
     }, [tasks]);
-
 
 
     //  ----------  Logica de TAREAS  ----------
@@ -73,9 +72,7 @@ export const TaskListComponent = () => {
         //  -----  de las tareas en el orden para mostrar.
         setTask(tempTask);
     }
-
-
-    //  ----------  Logica de TAREAS  ----------
+    
 
     //  -----  Crear Tarea  -----
     const addTask = (task) => {
@@ -92,7 +89,6 @@ export const TaskListComponent = () => {
     }
 
 
-
     return (
 
         <div className='componentes'>
@@ -105,10 +101,10 @@ export const TaskListComponent = () => {
                     <div className='card'>
 
                         <div className='card-header p-3'>
-                            <h5> ----- Lista de Tareas ----- </h5>
+                            <h5 className='label-titulo'> ----- Lista de Tareas ----- </h5>
                         </div>
 
-                        <div className='card-body' data-mdb-perfect-scrollbar='true' style={{ position: 'relative', height: '400px' }} >
+                        <div className='card-body' data-mdb-perfect-scrollbar='true' style={{ position: 'relative', height: 'auto' }} >
 
                             <table className='table'>
                                 <thead>

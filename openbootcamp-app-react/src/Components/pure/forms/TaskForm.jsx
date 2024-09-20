@@ -45,7 +45,10 @@ export const TaskForm = ({ add }) => {
 
         <Draggable>
 
-            <form onSubmit={ addTask } className='d-flex justify-content-center align-items-center mb-4'>
+            <form onSubmit={addTask}
+                className='task-form d-flex justify-content-center align-items-center mb-4'
+                style={{ marginTop: '50px' }}
+            >
 
                 <div className='form-outline flex-fill'>
 
@@ -53,19 +56,23 @@ export const TaskForm = ({ add }) => {
                         className='form-form-control-lg'
                         placeholder='Task Name...' required autoFocus />
 
-
+                    <br /> <br />
 
                     <input ref={descriptionRef} id='inputDescription' type='text'
                         className='form-form-control-lg'
                         placeholder='Task Description...' required />
 
+                    <br /> <br />
 
-                    <label htmlFor='selectLevel' className='sr-only'> Priority </label>
+                    <label htmlFor='selectLevel' className='sr-only'> Priority &nbsp; </label>
                     <select ref={levelRef} defaultValue={LEVELS.NORMAL} id='selectLevel'>
                         <option value={LEVELS.NORMAL}> Normal </option>
-                        <option value={LEVELS.BLOCKING}> Urgent </option>
+                        <option value={LEVELS.URGENT}> Urgent </option>
                         <option value={LEVELS.BLOCKING}> Blocking </option>
                     </select>
+
+                    <br /> <br />
+
                     <button type='submit' className='btn btn-success btn-lg ms-2'> Add </button>
 
 
