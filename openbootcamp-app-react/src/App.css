@@ -62,13 +62,11 @@ button:hover {
     background-color: blueviolet;
 }
 
-
 .task-form {
     padding: 30px;
     background-color: #282C34;
     border-radius: 10px;
 }
-
 
 .label-titulo {
     color: transparent;
@@ -77,9 +75,6 @@ button:hover {
     font-size: 56px;
     text-align: center;
 }
-
-
-
 
 
 /*  *****  RESPONSIVE  *****  */
