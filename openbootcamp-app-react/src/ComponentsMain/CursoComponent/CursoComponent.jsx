@@ -20,6 +20,7 @@ import { TituloCapitulosCurso } from './TituloCapitulosCurso.jsx';
 import { AllCycles } from '../../hooks/lifecycle/AllCycles.jsx';
 import { GreetingStyled } from '../../Components/pure/greetingStyled.jsx';
 import { Father } from '../../Components/container/Father.jsx';
+import { OptionalRender } from '../../Components/pure/OptionalRender.jsx';
 
 
 //  **********  Componente Principal de los Ejercicios del Curso  **********
@@ -29,7 +30,7 @@ export const CursoComponent = () => {
 
         <main className='curso-react'>
 
-            <h1 style={{marginTop: '50px'}}> Curso de React OpenBootcamp </h1>
+            <h1 style={{ marginTop: '50px' }}> Curso de React OpenBootcamp </h1>
 
             {/* *****  Componente de Clase y Componentes Funcionales  ***** */}
             <TituloCapitulosCurso titulo="Componentes de Clase y Componentes Funcionates" />
@@ -68,8 +69,14 @@ export const CursoComponent = () => {
             <GreetingStyled name='Antonio' />
 
             {/* *****  Manejo de Eventos en React - Comunicación Padre-Hijo e Hijo-Padre  ***** */}
-            <TituloCapitulosCurso titulo="Manejo de Eventos en React - Padre-Hijo & Hijo-Padre " />
+            <TituloCapitulosCurso titulo="Manejo de Eventos en React - Padre-Hijo & Hijo-Padre" />
             <Father />
+
+
+            {/* *****  Ejemplos de Renderizado Condicional  ***** */}
+            <TituloCapitulosCurso titulo="Ejemplos de Renderizado Condicional" />
+            <OptionalRender />
+
 
             {/* *****  Separador Visual  ***** */}
             <div className='separador'> </div>

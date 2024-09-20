@@ -11,7 +11,7 @@ export const TituloCapitulosCurso = ({titulo}) => {
 
     return (
 
-        <section className='componentes color'>
+        <section className='componentes caja-titulo'>
             <h2 className='titulo-componente'> {titulo} </h2>
        </section>
 

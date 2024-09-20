@@ -32,8 +32,9 @@
     background-color: rgb(101, 101, 109);
 }
 
-.color {
+.caja-titulo {
     background-color: #aac7cf;
+    padding: 10px;
 }
 
 .titulo-componente {
@@ -70,9 +71,9 @@ button:hover {
 
 .label-titulo {
     color: transparent;
-    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #282C34;
-    font-size: 56px;
+    font-size: 36px;
     text-align: center;
 }
 

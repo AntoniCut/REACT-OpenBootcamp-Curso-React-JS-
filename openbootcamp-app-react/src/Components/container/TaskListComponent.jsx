@@ -24,6 +24,9 @@ export const TaskListComponent = () => {
     //  -----  Estado de los Componentes  -----
     const [tasks, setTask] = useState([defaultTask1, defaultTask2, defaultTask3]);
 
+    //  -----  Estado para controlar la visibilidad del formulario  -----
+    const [showForm, setShowForm] = useState(false);
+
     const [loading, setLoading] = useState(true);
 
 
@@ -72,7 +75,7 @@ export const TaskListComponent = () => {
         //  -----  de las tareas en el orden para mostrar.
         setTask(tempTask);
     }
-    
+
 
     //  -----  Crear Tarea  -----
     const addTask = (task) => {
@@ -102,6 +105,13 @@ export const TaskListComponent = () => {
 
                         <div className='card-header p-3'>
                             <h5 className='label-titulo'> ----- Lista de Tareas ----- </h5>
+
+                            {/* Mostrar/ocultar formulario con el botón */}
+                            <button onClick={() => setShowForm(!showForm)}>
+                                {showForm ? "Close Form" : "Add Task"}
+                            </button>
+
+
                         </div>
 
                         <div className='card-body' data-mdb-perfect-scrollbar='true' style={{ position: 'relative', height: 'auto' }} >
@@ -141,7 +151,9 @@ export const TaskListComponent = () => {
 
             </Draggable>
 
-            <TaskForm add={addTask} />
+            {/* Mostrar formulario basado en el estado showForm */}
+            {showForm && <TaskForm add={addTask} />}
+
 
         </div>
     );

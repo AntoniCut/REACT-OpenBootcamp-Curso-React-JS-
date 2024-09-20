@@ -8,18 +8,26 @@ import React, { useState } from 'react';
 
 //  *****  Definiendo Estilos en constantes  **********
 
+let red = 0;
+let green = 200;
+let blue = 150;
+
 //  -----  Estilo para usuario logeado  -----
-const loggedStyle = {
-    color: 'white'
+export const loggedStyle = {
+    color: 'white',
+    backgroundColor: `rgb(${red}, ${green}, ${blue})`,
+    fontWeight: 'bold'
 }
 
 //  -----  Estilo para usuario No logeado  -----
-const unLoggedStyle = {
-    color: 'tomato',
+export const unLoggedStyle = {
+    color: 'white',
+    backgroundColor: 'tomato',
     fontWeight: 'bold'
 }
 
 
+//  **********  GreetingStyled()  **********
 export const GreetingStyled = (props) => {
 
     //  -----  Generamos un estado para el componente y asi controlar si el usuario esta o no logueado  -----
