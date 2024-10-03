@@ -39,6 +39,7 @@ export const TaskComponent = ({ task, complete, remove }) => {
 
             case LEVELS.BLOCKING:
                 return (<h6 className='mb-0'> <span className='badge bg-danger' style={{ fontSize: '16px' }}> {task.level} </span> </h6>)
+
             default:
                 break;
         }
@@ -55,11 +56,28 @@ export const TaskComponent = ({ task, complete, remove }) => {
     }
 
 
+    //  -----  Estilo para tarea completada  -----
+    const taskCompleted = {
+        color: 'gray',
+        textDecoration: 'line-through'
+    }
+
+    //  -----  Estilo para tarea pendiente  -----
+    const taskPending = {
+        fontWeight: 'bold',
+        color: 'tomato'
+    }
+
+
+    //  -----  almacenar la clase para darle estilos a las tareas completadas o pendientes  -----
+    const isTaskCompleted = task.completed ? taskCompleted : taskPending;
+
+
     return (
 
         <tr className='fw-normal'>
-            <th style={{ width: '30%' }}> <span> {task.name} </span> </th>
-            <td style={{ width: '50%' }} className='align-middle'> <span> {task.description} </span> </td>
+            <th style={{ width: '30%', fontSize: '24px' }} > <span style={isTaskCompleted}> {task.name} </span> </th>
+            <td style={{ width: '50%' }} className='align-middle'> <span style={isTaskCompleted}> {task.description} </span> </td>
             <td style={{ width: '10%' }} className='align-middle'> {taskLevelBadge()} </td>
             <td style={{ width: '10%' }} className='align-middle'>
                 {taskIconCompleted()}

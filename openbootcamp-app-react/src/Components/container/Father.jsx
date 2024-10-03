@@ -25,7 +25,7 @@ export const Father = () => {
 
     return (
 
-        <div className='componentes'>
+        <div className='componentes father'>
 
             <Child name={name} send={showMessage} update={updateName} />
 

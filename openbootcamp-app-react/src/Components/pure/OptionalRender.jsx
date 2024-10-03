@@ -64,11 +64,9 @@ export const OptionalRender = () => {
 
 
     //  -----  Renderizado Condicional del Botón  -----
-    if (access) {
-        optionalButton = <LogoutButton propStyle={unLoggedStyle} logoutAction={logoutAction} > </LogoutButton>
-    } else {
-        optionalButton = <LoginButton propStyle={loggedStyle} loginAction={loginAction} > </LoginButton>
-    }
+    if (access) optionalButton = <LogoutButton propStyle={unLoggedStyle} logoutAction={logoutAction} > </LogoutButton>
+    else optionalButton = <LoginButton propStyle={loggedStyle} loginAction={loginAction} > </LoginButton>
+    
 
 
     //  -----  Renderizado Condicional del Mensaje - Mensaje sin leer  -----

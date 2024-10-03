@@ -35,7 +35,10 @@ export const TaskListComponent = () => {
 
         console.log("\n");
         console.warn('Task State has been modified');
-        setLoading(false);
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
 
         return () => {
             console.warn('TaskList component is going to unmount...');
@@ -92,9 +95,59 @@ export const TaskListComponent = () => {
     }
 
 
+    //  -----  Añadir la Tabla  -----
+    const Table = () => {
+
+        return (
+
+            <table className='table'>
+                <thead>
+                    <tr>
+                        <th scope='col' style={{ width: '30%' }}> Title </th>
+                        <th scope='col' style={{ width: '50%' }}> Description </th>
+                        <th scope='col' style={{ width: '10%' }}> Priority </th>
+                        <th scope='col' style={{ width: '10%' }}> Actions </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {/* ----------  Itera sobre una lista de tareas  ---------- */}
+
+                    {
+                        tasks.map((task, index) => {
+                            return (
+                                <TaskComponent
+                                    key={index}
+                                    task={task}
+                                    complete={completeTask}
+                                    remove={deleteTask}
+                                />
+                            )
+                        })
+                    }
+
+                </tbody>
+            </table>
+
+        )
+    }
+
+
+    let taskTable;
+
+    if (tasks.length > 0) taskTable = <Table />
+    else taskTable = (
+        <div>
+            <h3> There are no Tasks to show !!! </h3>
+            <h4> Please, create one !</h4>
+        </div>
+    )
+
+
     return (
 
-        <div className='componentes'>
+        <div className='componentes lista-tareas'>
 
             <Draggable >
 
@@ -116,43 +169,20 @@ export const TaskListComponent = () => {
 
                         <div className='card-body' data-mdb-perfect-scrollbar='true' style={{ position: 'relative', height: 'auto' }} >
 
-                            <table className='table'>
-                                <thead>
-                                    <tr>
-                                        <th scope='col' style={{ width: '30%' }}> Title </th>
-                                        <th scope='col' style={{ width: '50%' }}> Description </th>
-                                        <th scope='col' style={{ width: '10%' }}> Priority </th>
-                                        <th scope='col' style={{ width: '10%' }}> Actions </th>
-                                    </tr>
-                                </thead>
+                            {/* ----------  Aqui se Renderiza la Tabla para la Lista de Tareas  ---------- */}
 
-                                <tbody>
+                            { loading ? <i style={{fontSize: '40px'}}> Loading Tasks... 🔄 </i> : taskTable }
 
-                                    {/* ----------  Itera sobre una lista de tareas  ---------- */}
-
-                                    {
-                                        tasks.map((task, index) => {
-                                            return (
-                                                <TaskComponent
-                                                    key={index}
-                                                    task={task}
-                                                    complete={completeTask}
-                                                    remove={deleteTask}
-                                                />
-                                            )
-                                        })
-                                    }
-
-                                </tbody>
-                            </table>
                         </div>
+
                     </div>
+
                 </div>
 
             </Draggable>
 
-            {/* Mostrar formulario basado en el estado showForm */}
-            {showForm && <TaskForm add={addTask} />}
+            {/*  **********  Mostrar formulario basado en el estado showForm  **********  */}
+            {showForm && <TaskForm add={addTask} length={tasks.length} />}
 
 
         </div>

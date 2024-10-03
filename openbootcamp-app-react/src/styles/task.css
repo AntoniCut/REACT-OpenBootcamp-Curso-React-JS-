@@ -11,18 +11,16 @@
   color: cadetblue;
 }
 
-/*
 .task-action {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .task-completed {
-    color: gray;
-    text-decoration: line-through;
+  color: gray;
+  text-decoration: line-through;
 }
 
 .task-pending {
-    font-weight: bold;
-    color: tomato;
-}
-*//*# sourceMappingURL=task.css.map */
+  font-weight: bold !important;
+  color: tomato !important;
+}/*# sourceMappingURL=task.css.map */

@@ -63,10 +63,35 @@ button:hover {
     background-color: blueviolet;
 }
 
+
+.father {
+    overflow: hidden;
+}
+
+
+
+
+/*  **********  Lista de Tareas  **********  */
+.lista-tareas {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+/*  **********  formulario para añadir tareas  **********  */
 .task-form {
+    position: absolute;
+    top: 26%;
+    left: 34%;
+    overflow: hidden;
+    z-index: 100;
     padding: 30px;
     background-color: #282C34;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .label-titulo {

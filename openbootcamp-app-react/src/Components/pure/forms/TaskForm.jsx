@@ -12,7 +12,7 @@ import Draggable from 'react-draggable';
 
 
 //  **********  Formulario para Añadir Tareas  **********
-export const TaskForm = ({ add }) => {
+export const TaskForm = ({ add, length }) => {
 
 
     //  -----  Referencias a los campos del Formularios  -----
@@ -39,6 +39,21 @@ export const TaskForm = ({ add }) => {
     }
 
 
+    //  -----  Estilos para el Levels de la Tarea - Priority -----
+    const normalStyle = {
+        color: 'blue',
+        fontWeight: 'bold'
+    }
+
+    const urgentStyle = {
+        color: 'rgb(255, 215, 0)',
+        fontWeight: 'bold'
+    }
+
+    const blockingStyle = {
+        color: 'tomato',
+        fontWeight: 'bold'
+    }
 
 
     return (
@@ -65,15 +80,17 @@ export const TaskForm = ({ add }) => {
                     <br /> <br />
 
                     <label htmlFor='selectLevel' className='sr-only'> Priority &nbsp; </label>
-                    <select ref={levelRef} defaultValue={LEVELS.NORMAL} id='selectLevel'>
-                        <option value={LEVELS.NORMAL}> Normal </option>
-                        <option value={LEVELS.URGENT}> Urgent </option>
-                        <option value={LEVELS.BLOCKING}> Blocking </option>
+                    <select ref={levelRef} defaultValue={LEVELS.NORMAL} style={normalStyle} id='selectLevel'>
+                        <option value={LEVELS.NORMAL} style={normalStyle}> Normal </option>
+                        <option value={LEVELS.URGENT} style={urgentStyle}> Urgent </option>
+                        <option value={LEVELS.BLOCKING} style={blockingStyle}> Blocking </option>
                     </select>
 
                     <br /> <br />
 
-                    <button type='submit' className='btn btn-success btn-lg ms-2'> Add </button>
+                    <button type='submit' className='btn btn-success btn-lg ms-2'>  
+                        {length > 0 ? 'Add New Task' : 'Create your First Task'}
+                    </button>
 
 
                 </div>
@@ -87,7 +104,8 @@ export const TaskForm = ({ add }) => {
 
 
 TaskForm.propTypes = {
-    add: propTypes.func.isRequired
+    add: propTypes.func.isRequired,
+    length: propTypes.number.isRequired
 }
 
 
