@@ -94,6 +94,29 @@ button:hover {
     cursor: pointer;
 }
 
+/*  **********  Formulario de LoginFormic  **********  */
+.login-formik {
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    overflow: hidden;
+    background-color: #282C34;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.error-message {
+    font-size: 24px;
+    color: tomato;
+}
+
+
+
+
 .label-titulo {
     color: transparent;
     -webkit-text-stroke-width: 2px;

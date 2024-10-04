@@ -21,6 +21,7 @@ import { AllCycles } from '../../hooks/lifecycle/AllCycles.jsx';
 import { GreetingStyled } from '../../Components/pure/greetingStyled.jsx';
 import { Father } from '../../Components/container/Father.jsx';
 import { OptionalRender } from '../../Components/pure/OptionalRender.jsx';
+import { LoginFormik } from '../../Components/pure/forms/LoginFormik.jsx';
 
 
 //  **********  Componente Principal de los Ejercicios del Curso  **********
@@ -77,6 +78,10 @@ export const CursoComponent = () => {
             <TituloCapitulosCurso titulo="Ejemplos de Renderizado Condicional" />
             <OptionalRender />
 
+
+            {/* *****  Ejemplos de Formularios con Formik y Yup  ***** */}
+            <TituloCapitulosCurso titulo="Formularios con Formik y Yup" />
+            <LoginFormik />
 
             {/* *****  Separador Visual  ***** */}
             <div className='separador'> </div>
