@@ -23,6 +23,7 @@ import { Father } from '../../Components/container/Father.jsx';
 import { OptionalRender } from '../../Components/pure/OptionalRender.jsx';
 import { LoginFormik } from '../../Components/pure/forms/LoginFormik.jsx';
 import { RegisterFormik } from '../../Components/pure/forms/RegisterFormik.jsx';
+import { NavigationButtons } from '../../Components/container/NavigationButtons.jsx';
 
 
 //  **********  Componente Principal de los Ejercicios del Curso  **********
@@ -85,9 +86,11 @@ export const CursoComponent = () => {
             <LoginFormik />
             <RegisterFormik />
 
+            {/* -----  Componente para Navegar Hacia Atras y Hacia Delante y Volver a la Home  ----- */}
+            <NavigationButtons />
 
             {/* *****  Separador Visual  ***** */}
-            <div className='separador'> </div>
+            {/* <div className='separador'> </div> */}
 
         </main>
 

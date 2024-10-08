@@ -3,14 +3,19 @@
 //  ********************************************************************
 
 
+import { NavigationButtons } from "../../Components/container/NavigationButtons"
+
+
 export const NotFoundPage = () => {
 
 
     return (
 
-        <div className="componentes">
+        <div className="componentes" style={{ marginTop: '200px' }}>
 
             <h2 className='titulo-componente'> -----  404 - Page Not Found  ----- </h2>
+
+            <NavigationButtons />
 
         </div>
     )

@@ -3,6 +3,7 @@
 //  **************************************************************************************************
 
 
+import { NavigationButtons } from '../../Components/container/NavigationButtons';
 import { TaskListComponent } from '../../Components/container/TaskListComponent';
 import './ProyectoFinalComponent.css';
 
@@ -18,6 +19,9 @@ export const ProyectoFinalComponent = () => {
 
             {/* *****  Componente de Listado de Tareas  ***** */}
             <TaskListComponent />
+
+            {/* -----  Componente para Navegar Hacia Atras y Hacia Delante y Volver a la Home  ----- */}
+            <NavigationButtons />
 
         </main>
 
