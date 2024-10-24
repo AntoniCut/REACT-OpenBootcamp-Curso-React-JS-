@@ -2,15 +2,19 @@
 //  **********  /openbootcamp/src/pages/auth/LoginPage.jsx  **********
 //  ******************************************************************
 
+import { LoginFormik } from "../../Components/pure/forms/LoginFormik";
+
 
 export const LoginPage = () => {
 
 
     return (
 
-        <div className="componentes">
+        <div className="componentes" style={{ marginTop: '200px' }}>
 
             <h2 className='titulo-componente'> -----  Login Page  ----- </h2>
+
+            <LoginFormik />
 
         </div>
     )

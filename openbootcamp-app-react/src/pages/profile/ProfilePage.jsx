@@ -3,7 +3,7 @@
 //  *******************************************************************
 
 
-import { NavigationButtons } from "../../Components/container/NavigationButtons"
+import { NavigationButtons } from "../../Components/container/NavigationButtons";
 
 
 export const ProfilePage = ( {user}) => {

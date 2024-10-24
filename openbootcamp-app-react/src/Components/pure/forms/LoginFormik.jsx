@@ -6,6 +6,8 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import Draggable from 'react-draggable';
 import * as Yup from 'yup';
+import { NavigationButtons } from '../../container/NavigationButtons';
+import { useNavigate } from 'react-router-dom';
 
 
 //  **********  Esquema para utilizar Yup  **********
@@ -29,6 +31,8 @@ const loginSchema = Yup.object().shape({
 export const LoginFormik = () => {
 
 
+    const navigate = useNavigate();
+
     //  -----  inicializacion de credenciales  -----
     const initialCredentials = {
         email: '',
@@ -42,6 +46,7 @@ export const LoginFormik = () => {
         await new Promise((r) => setTimeout(r, 1000));
         //alert(JSON.stringify(values, null, 2));
         localStorage.setItem('credentials', values);
+        navigate('/');
     }
 
 
@@ -73,7 +78,7 @@ export const LoginFormik = () => {
                             <Field type="email" id="email" name="email" placeholder=" example@email.com" />
 
                             {   //  -----  Email Errors  -----
-                                errors.email && touched.email &&  
+                                errors.email && touched.email &&
                                 <div className='error-message'> <ErrorMessage name="email" /> </div>
                             }
 
@@ -83,7 +88,7 @@ export const LoginFormik = () => {
                             <Field type="password" id="password" name="password" placeholder="your password" />
 
                             {   //  -----  Password Errors  -----
-                                errors.password && touched.password && 
+                                errors.password && touched.password &&
                                 <div className='error-message'> <ErrorMessage name="password" /> </div>
                             }
 
@@ -100,6 +105,8 @@ export const LoginFormik = () => {
                 )}
 
             </Formik>
+
+            <NavigationButtons />
 
         </div>
     );

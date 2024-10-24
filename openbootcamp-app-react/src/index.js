@@ -3,23 +3,27 @@
 //  ************************************************************
 
 
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap-icons/font/fonts/bootstrap-icons.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './index.css';
-//import { App } from './App';
+
 import { AppRoutingOne } from './AppRoutingOne';
+import { BrowserRouter } from 'react-router-dom';
 
 //import reportWebVitals from './reportWebVitals';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <AppRoutingOne />
-    </React.StrictMode>
+
+    
+        <BrowserRouter>
+            <AppRoutingOne />
+        </BrowserRouter>
+    
+
 );
 
 // If you want to start measuring performance in your app, pass a function
