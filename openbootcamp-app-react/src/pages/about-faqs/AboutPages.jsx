@@ -3,19 +3,12 @@
 //  *************************************************************************
 
 
-import { NavigationButtons } from '../../Components/container/NavigationButtons';
-
-
 export const AboutPages = () => {
 
     return (
 
-        <div className="componentes" style={{marginTop: '200px'}}>
-
+        <div className="componentes" style={{marginTop: '250px'}}>
             <h2 className='titulo-componente'> -----  About | FAQs Page  ----- </h2>
-
-            <NavigationButtons />
-
         </div>
     )
 }

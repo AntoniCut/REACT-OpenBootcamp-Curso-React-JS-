@@ -3,7 +3,6 @@
 //  *****************************************************************
 
 
-import { NavigationButtons } from '../../Components/container/NavigationButtons';
 import { TaskListComponent } from '../../Components/container/TaskListComponent';
 
 
@@ -12,12 +11,8 @@ export const TaskPage = () => {
 
     return (
 
-        <div className="componentes" style={{marginTop: '200px'}}>
-
+        <div className="componentes" style={{marginTop: '250px'}}>
             <TaskListComponent />
-
-            <NavigationButtons />
-            
         </div>
     )
 }

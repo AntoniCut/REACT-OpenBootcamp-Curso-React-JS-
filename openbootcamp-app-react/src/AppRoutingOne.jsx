@@ -6,7 +6,9 @@
 import './App.css';
 
 import { HeaderComponent } from './ComponentsMain/HeaderComponent/HeaderComponent';
-import { NavBarComponent } from './ComponentsMain/NavbarComponent/NavBarComponent';
+import { NavBarHeader } from './ComponentsMain/HeaderComponent/NavBarHeader';
+//import { HomePage } from './pages/home/HomePage';
+//import { NavBarComponent } from './ComponentsMain/NavbarComponent/NavBarComponent';
 
 
 //  **********  Componente Padre o Principal - App()  **********
@@ -19,9 +21,9 @@ export const AppRoutingOne = () => {
             {/* **********  Cabecera del Proyecto  ********** */}
             <HeaderComponent />
 
-            {/* **********  Barra de Navegación  ********** */}
-            <NavBarComponent />
-
+            {/* **********  Barra de Navegación del Header  ********** */}
+            <NavBarHeader />
+            
         </div>
 
     )

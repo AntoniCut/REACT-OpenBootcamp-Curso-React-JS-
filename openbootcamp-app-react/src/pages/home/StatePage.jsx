@@ -4,7 +4,7 @@
 
 
 import { useLocation } from 'react-router-dom';
-import { NavigationButtons } from '../../Components/container/NavigationButtons';
+
 
 export const StatePage = () => {
 
@@ -21,14 +21,11 @@ export const StatePage = () => {
 
     return (
 
-        <div className="componentes" style={{ marginTop: '200px' }}>
+        <div className="componentes" style={{ marginTop: '250px' }}>
 
             <h2 className='titulo-componente'> -----  StatePage  ----- </h2>
             <h3> State (online): {isOnline}</h3>
             <h3> Query Param (online): {queryOnline}</h3>
-
-            {/* Navigation buttons */}
-            <NavigationButtons />
 
         </div>
     )

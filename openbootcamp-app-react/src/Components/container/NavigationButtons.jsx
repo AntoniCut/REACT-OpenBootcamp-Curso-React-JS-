@@ -17,9 +17,9 @@ export const NavigationButtons = () => {
     return (
         
         <div className="btn-container">
-            <button onClick={goToHome}> Go to Home </button>
-            <button onClick={goBack}> Go Back </button>
-            <button onClick={goForward}> Go Forward </button>
+            <button onClick={goToHome} className='navbar-header__link btn-color' > Go to Home </button>
+            <button onClick={goBack} className='navbar-header__link btn-color' >  Go Back </button>
+            <button onClick={goForward} className='navbar-header__link btn-color' > Go Forward </button>
         </div>
     );
 }

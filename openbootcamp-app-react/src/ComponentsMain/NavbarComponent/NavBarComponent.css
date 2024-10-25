@@ -6,14 +6,12 @@
 .navbar {
     width: 90%;
     height: 100px;
-    position: fixed;
-    top: 98px;
-    z-index: 10;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #282C34;
+    /* background-color: #282C34; */
+    background-color: #65656D;
 }
 
 .navbar__link {
@@ -22,7 +20,8 @@
     font-weight: bold;
     border-radius: 35px;
     color: #ffffff;
-    background-color: #65656D;
+    /* background-color: #65656D; */
+    background-color: #282C34;
     text-decoration: none;
     transition: all 300ms ease-in-out;
 }

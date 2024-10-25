@@ -36,7 +36,7 @@ export const HomePage = () => {
 
     return (
 
-        <div className="componentes" style={{ marginTop: '200px' }}>
+        <div className="componentes" style={{ marginTop: '250px' }}>
             <h2 className='titulo-componente'> -----  HomePage  ----- </h2>
             <h3> Dashboard - Access to your Tasks </h3>
 
@@ -49,9 +49,7 @@ export const HomePage = () => {
             <button className="btn-container" onClick={navigateWithProps}>
                 Go To State Page with Props
             </button>
-
-            {/* Additional navigation buttons */}
-            <NavigationButtons />
+            
         </div>
     )
 }

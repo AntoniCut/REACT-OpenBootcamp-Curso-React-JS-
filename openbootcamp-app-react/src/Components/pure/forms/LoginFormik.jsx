@@ -6,7 +6,6 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import Draggable from 'react-draggable';
 import * as Yup from 'yup';
-import { NavigationButtons } from '../../container/NavigationButtons';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -105,9 +104,7 @@ export const LoginFormik = () => {
                 )}
 
             </Formik>
-
-            <NavigationButtons />
-
+            
         </div>
     );
 }
