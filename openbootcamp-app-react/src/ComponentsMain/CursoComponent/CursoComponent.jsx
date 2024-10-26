@@ -27,6 +27,7 @@ import { NavBarComponent } from '../NavbarComponent/NavBarComponent.jsx';
 import { AsyncExample } from '../../Components/pure/AsyncExample.jsx';
 import { ObservableExample } from '../../Components/pure/ObservableExample.jsx';
 import { FetchExample } from '../../Components/pure/FetchExample.jsx';
+import { AxiosExample } from '../../Components/pure/AxiosExample.jsx';
 
 
 
@@ -110,6 +111,11 @@ export const CursoComponent = () => {
             {/* -----  Peticiones HTTP con FETCH  ----- */}
             <TituloCapitulosCurso titulo="Peticiones HTTP con FETCH" />
             <FetchExample />
+
+
+            {/* -----  Peticiones HTTP con AXIOS  ----- */}
+            <TituloCapitulosCurso titulo="Peticiones HTTP con AXIOS" />
+            <AxiosExample />
 
             <div style={{marginBottom: '200px'}}> </div>
 

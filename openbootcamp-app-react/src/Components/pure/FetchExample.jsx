@@ -4,7 +4,7 @@
 
 
 import { useState, useEffect } from "react";
-import { getAllPagedUsers, getAllUsers, getUsersDetailsById } from "../../services/FetchService";
+import { getAllPagedUsers, getAllUsers, getUsersDetailsById, login } from "../../services/FetchService";
 
 
 //  ------------------------------------
@@ -100,6 +100,23 @@ export const FetchExample = () => {
     }
 
 
+    const authUser = () => {
+
+        login("eve.holt@reqres.in", "cityslicka")
+
+            .then(response => {
+
+                console.log('TOKEN ==> ', response.token);
+                sessionStorage.setItem('token', response.token);
+
+            })
+
+            .catch(error => alert(`Error while login user: ${error} `))
+
+            .finally(() => console.log('Ended login user. Navigate to Home...'))
+    }
+
+
     return (
 
         <div className="componentes">
@@ -110,10 +127,13 @@ export const FetchExample = () => {
             <section className="fetch-info">
 
                 <h3> Showing {userPerPage} users of {totalUsers} in total </h3>
-                
+
                 <div className="btn-container">
                     <button onClick={() => obtainPagedUsers(1)}> page 1 </button>
                     <button onClick={() => obtainPagedUsers(2)}> page 2 </button>
+                    
+                    {/* -----  Button to simulate login  ----- */}
+                    <button onClick={authUser}> Auth User </button>
                 </div>
 
                 <>
@@ -121,22 +141,18 @@ export const FetchExample = () => {
                         selectedUser ?
 
                             <section className="fetch-info">
-
                                 <article className="user-info">
                                     <p> {selectedUser.id} - {selectedUser.first_name} {selectedUser.last_name} </p>
                                     <img src={selectedUser.avatar} alt={`img avatar ${selectedUser.id}`} style={{ width: '230px', height: '200px' }} />
-                                    <p style={{fontSize: '12px'}}> {selectedUser.avatar} </p>
+                                    <p style={{ fontSize: '12px' }}> {selectedUser.avatar} </p>
                                 </article>
-
                             </section>
 
-                            : ''
+                            : <h3 style={{ color: '#AAC7CF', fontWeight: 'bold' }}> Please, click on a user to see its details </h3>
                     }
                 </>
 
             </section>
-
-
 
             <h3> Users: </h3>
 
@@ -154,70 +170,6 @@ export const FetchExample = () => {
 
             </section>
 
-
-
-
         </div>
     )
 }
-
-
-/*
-
-{
-"page": 1,
-"per_page": 6,
-"total": 12,
-"total_pages": 2,
-"data": [
-{
-"id": 1,
-"email": "george.bluth@reqres.in",
-"first_name": "George",
-"last_name": "Bluth",
-"avatar": "https://reqres.in/img/faces/1-image.jpg"
-},
-{
-"id": 2,
-"email": "janet.weaver@reqres.in",
-"first_name": "Janet",
-"last_name": "Weaver",
-"avatar": "https://reqres.in/img/faces/2-image.jpg"
-},
-{
-"id": 3,
-"email": "emma.wong@reqres.in",
-"first_name": "Emma",
-"last_name": "Wong",
-"avatar": "https://reqres.in/img/faces/3-image.jpg"
-},
-{
-"id": 4,
-"email": "eve.holt@reqres.in",
-"first_name": "Eve",
-"last_name": "Holt",
-"avatar": "https://reqres.in/img/faces/4-image.jpg"
-},
-{
-"id": 5,
-"email": "charles.morris@reqres.in",
-"first_name": "Charles",
-"last_name": "Morris",
-"avatar": "https://reqres.in/img/faces/5-image.jpg"
-},
-{
-"id": 6,
-"email": "tracey.ramos@reqres.in",
-"first_name": "Tracey",
-"last_name": "Ramos",
-"avatar": "https://reqres.in/img/faces/6-image.jpg"
-}
-],
-"support": {
-"url": "https://reqres.in/#support-heading",
-"text": "To keep ReqRes free, contributions towards server costs are appreciated!"
-}
-}
-
-
-*/
