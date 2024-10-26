@@ -26,6 +26,7 @@ import { RegisterFormik } from '../../Components/pure/forms/RegisterFormik.jsx';
 import { NavBarComponent } from '../NavbarComponent/NavBarComponent.jsx';
 import { AsyncExample } from '../../Components/pure/AsyncExample.jsx';
 import { ObservableExample } from '../../Components/pure/ObservableExample.jsx';
+import { FetchExample } from '../../Components/pure/FetchExample.jsx';
 
 
 
@@ -106,6 +107,9 @@ export const CursoComponent = () => {
             <AsyncExample />
             <ObservableExample />
 
+            {/* -----  Peticiones HTTP con FETCH  ----- */}
+            <TituloCapitulosCurso titulo="Peticiones HTTP con FETCH" />
+            <FetchExample />
 
             <div style={{marginBottom: '200px'}}> </div>
 

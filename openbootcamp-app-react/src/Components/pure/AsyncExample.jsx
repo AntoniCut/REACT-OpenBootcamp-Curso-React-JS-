@@ -129,9 +129,7 @@ export const AsyncExample = () => {
                 <button onClick={consumeError}> Obtain Error </button>
                 <button onClick={urlNotFound}> Request to Unknown URL </button>
                 <button onClick={multiplePromise}> Multiple Promise </button>
-               
             </div>
-
 
         </div>
     )
