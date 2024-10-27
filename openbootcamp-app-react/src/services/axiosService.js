@@ -16,8 +16,5 @@ export function getRandomUser() {
         validateStatus: function(status) {
             return status < 500;
         }
-   
-
-
     })
 }

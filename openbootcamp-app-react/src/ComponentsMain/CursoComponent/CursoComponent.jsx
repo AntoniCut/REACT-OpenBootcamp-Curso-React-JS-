@@ -28,6 +28,7 @@ import { AsyncExample } from '../../Components/pure/AsyncExample.jsx';
 import { ObservableExample } from '../../Components/pure/ObservableExample.jsx';
 import { FetchExample } from '../../Components/pure/FetchExample.jsx';
 import { AxiosExample } from '../../Components/pure/AxiosExample.jsx';
+import { AxiosCrudExample } from '../../Components/pure/AxiosCrudExample.jsx';
 
 
 
@@ -101,7 +102,7 @@ export const CursoComponent = () => {
             {/* -----  React Router V6  ----- */}
             <TituloCapitulosCurso titulo="React Router Version 6" />
             <NavBarComponent />
-            
+
 
             {/* -----  Ejemplos de Procesos Asincronos  ----- */}
             <TituloCapitulosCurso titulo="Ejemplos de Procesos Asincronos" />
@@ -117,7 +118,13 @@ export const CursoComponent = () => {
             <TituloCapitulosCurso titulo="Peticiones HTTP con AXIOS" />
             <AxiosExample />
 
-            <div style={{marginBottom: '200px'}}> </div>
+
+            {/* -----  CRUD con  AXIOS  ----- */}
+            <TituloCapitulosCurso titulo="CRUD con  AXIOS" />
+            <AxiosCrudExample />
+
+
+            <div style={{ marginBottom: '200px' }}> </div>
 
             {/* *****  Separador Visual  ***** */}
             {/* <div className='separador'> </div> */}

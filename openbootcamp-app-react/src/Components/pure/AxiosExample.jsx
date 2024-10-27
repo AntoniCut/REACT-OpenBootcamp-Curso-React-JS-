@@ -15,7 +15,7 @@ export const AxiosExample = () => {
 
     const [user, setUser] = useState(null);
 
-    //useEffect(() => obtainUser(), []);
+    useEffect(() => obtainUser(), []);
 
 
     //  -----  obtener usuario  -----
@@ -28,7 +28,7 @@ export const AxiosExample = () => {
                 if (response.status === 200) {
                     setUser(response.data.results[0])
                     console.log("response ==> ", response);
-                    console.log("response.data.results ==> ", response.data.results);
+                    console.log("response.data.results[0] ==> ", response.data.results[0]);
                 }
             })
             .catch(error => alert(`Something went wrong: ${error}`))
@@ -64,36 +64,3 @@ export const AxiosExample = () => {
     )
 }
 
-
-/*
-
-{
-"results": [
-{
-"gender": "male",
-"name": {
-"title": "Monsieur",
-"first": "Nevio",
-"last": "Robert"
-},
-"location": {
-"street": {
-"number": 9951,
-"name": "Rue Paul-Duvivier"
-},
-"city": "Rekingen (Ag)",
-"state": "Basel-Landschaft",
-"country": "Switzerland",
-"postcode": 1455,
-"coordinates": {
-"latitude": "-60.6882",
-"longitude": "-83.9192"
-},
-"timezone": {
-"offset": "+5:30",
-"description": "Bombay, Calcutta, Madras, New Delhi"
-}
-},
-"email": "nevio.robert@example.com",
-
-*/
