@@ -8,7 +8,8 @@
 import { API_CALL_FAILURE, API_CALL_REQUEST, API_CALL_SUCCESS } from "../actions/asyncActions";
 
 
-// Initial State for userState
+
+//  ----------  Initial State for userState  ----------
 const initialState = {
     fetching: false,
     token: null,
@@ -16,9 +17,13 @@ const initialState = {
     loged: false
 }
 
-export const userReducer = (state=initialState, action) => {
+
+
+//  ----------  user reducer  ----------
+export const userReducer = (state = initialState, action) => {
 
     switch (action.type) {
+
         case API_CALL_REQUEST:
             return {
                 ...state,
@@ -27,6 +32,7 @@ export const userReducer = (state=initialState, action) => {
                 error: null,
                 loged: false
             }
+
         case API_CALL_SUCCESS:
             return {
                 ...state,
@@ -35,16 +41,17 @@ export const userReducer = (state=initialState, action) => {
                 error: null,
                 loged: true,
             }
+
         case API_CALL_FAILURE:
             return {
                 ...state,
                 fetching: false,
                 token: null,
-                error: action.payload.error,
+                error: action.payload?.error,
                 loged: false
             }
+
         default:
             return state;
     }
-
 }
