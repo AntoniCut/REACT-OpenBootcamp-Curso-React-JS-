@@ -1,5 +1,5 @@
 //  ************************************************************
-//  **********  /openbootcamp/src/hooks/ejemplo1.jsx  **********
+//  **********  /openbootcamp/src/hooks/ejemplo3.jsx  **********
 //  ************************************************************
 
 
@@ -15,7 +15,8 @@ import React, { useState, useContext } from 'react';
 */
 
 
-//  ----- Inicializamos un estado vacio que va a rellenarse con los datos del contexto del padre  -----
+//  ----------  Inicializamos un estado vacio que va  ----------------------- 
+//  ----------  a rellenarse con los datos del contexto del padre  ----------
 const miContexto = React.createContext(null);
 
 
@@ -87,5 +88,5 @@ export function MiComponenteConContexto() {
             </div>
 
         </miContexto.Provider>
-    );
+    )
 }
