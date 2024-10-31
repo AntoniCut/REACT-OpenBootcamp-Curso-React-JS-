@@ -82,7 +82,7 @@ export const Counter = () => {
 
             <div className='components-container'>
 
-                <h2> -----  Counter  ----- </h2>
+                <h2> -----  Counter Use Reducer Example  ----- </h2>
                 
                 {/* <p>Points: { state.count }</p> */}
                 <Points />

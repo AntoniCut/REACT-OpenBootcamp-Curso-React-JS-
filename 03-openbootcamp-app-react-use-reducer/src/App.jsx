@@ -6,6 +6,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { Counter } from './components/Counter';
+import { LoginUseState } from './components/LoginUseState';
+import { LoginUseReducer } from './components/LoginUseReducer';
 
 
 export const App = () => {
@@ -22,8 +24,11 @@ export const App = () => {
 
             <main className='main'>
 
-                <h2> ----------  USE REDUCER EXAMPLES  ---------- </h2>
                 <Counter />
+                
+                <LoginUseState />
+
+                <LoginUseReducer />
 
             </main>
 

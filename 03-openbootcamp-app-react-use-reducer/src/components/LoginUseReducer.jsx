@@ -1,14 +1,20 @@
+//  *******************************************************************************************
+//  **********  /03-openbootcamp-app-use-reducer/src/components/LoginUseReducer.jsx  **********
+//  *******************************************************************************************
+
+
 import React, { useReducer } from 'react';
 
 
-// Actions
+//  -----  Actions  -----
 const FIELD = 'FIELD';
 const LOGIN = 'LOGIN';
 const SUCCESS = ' SUCCESS';
 const ERROR = 'ERROR';
 const LOGOUT = 'LOGOUT';
 
-// INITIAL STATE
+
+//  -----  INITIAL STATE  -----
 const initialState = {
     username: '',
     password: '',
@@ -18,20 +24,24 @@ const initialState = {
 }
 
 
-// Reducer
+//  -----  Login Reducer  -----
 const loginReducer = (state, action) => {
+
     switch (action.type) {
+
         case FIELD:
             return {
                 ...state,
                 [action.fieldName]: action.payload
             }
+
         case LOGIN:
             return {
                 ...state,
                 error: '',
                 isLoading: true
             }
+
         case SUCCESS:
             return {
                 ...state,
@@ -39,100 +49,122 @@ const loginReducer = (state, action) => {
                 isLoading: false,
                 isLoggedIn: true
             }
+
         case ERROR:
             return {
                 ...state,
                 error: 'Invalid Username or Password',
                 isLoading: false,
                 isLoggedIn: false,
-                username:'',
-                password:''
+                username: '',
+                password: ''
             }
+
         case LOGOUT:
             return {
-                ...state,
+                ...initialState,
                 isLoggedIn: false
             }
+
         default:
             break;
     }
 }
 
-const Loginusereducer = () => {
 
+
+//  ----------  LogiUseReducer  ----------  
+//  --  Componente para un Formulario con useReducer  --
+export const LoginUseReducer = () => {
+
+    //  -----  useReducer  -----
     const [state, dispatch] = useReducer(loginReducer, initialState);
 
-    // Obtain all variables from state
+    //  -----  Obtain all variables from state  -----
     const { username, password, error, isLoading, isLoggedIn } = state;
 
-    // Submit
+
+    //  -----  Submit  -----
     const submit = async (e) => {
+
         e.preventDefault();
-        // Dispatch Action:
-        dispatch({type:LOGIN});
+
+        //  -----  Dispatch Action:  -----
+        dispatch({ type: LOGIN });
+
         try {
-            await function login({username, password}) {
+
+            await function login({ username, password }) {
+
                 new Promise((resolve, reject) => {
+
                     setTimeout(() => {
-                        if(username === 'admin' && password === 'admin') {
-                            resolve();
-                        }else {
-                            reject()
-                        }
+
+                        if (username === 'admin' && password === 'admin') resolve();
+                        else reject();
+
                     }, 2000);
                 })
             }
-            dispatch({type: SUCCESS})
+            dispatch({ type: SUCCESS })
+
         } catch (error) {
-           dispatch({type:ERROR})
+            dispatch({ type: ERROR })
         }
     }
 
-    const logout = () => {
-        dispatch({type: LOGOUT})
-    }
+
+    //  -----  logout  -----
+    const logout = (e) => dispatch({ type: LOGOUT })
+
+
+
 
     return (
-        <div className='App'>
-            <div>
-                {
-                    isLoggedIn ? (
-                        <div>
-                            <h1>
-                                Welcome, {username}!
-                            </h1>
-                            <button onClick={logout}>
-                                Logout
-                            </button>
-                        </div>
-                    ) :
+
+
+        <div className='components-container'>
+
+            <h2> -----  Login Use Reducer Example  ----- </h2>
+
+            {
+                isLoggedIn ? (
+                    <div>
+                        <h1>
+                            Welcome, {username}!
+                        </h1>
+                        <button onClick={logout}>
+                            Logout
+                        </button>
+                    </div>
+                ) :
                     (
                         <form onSubmit={submit}>
                             {
-                                error && <p style={{color: 'tomato'}}>{error}</p>
+                                error && <p style={{ color: 'tomato' }}>{error}</p>
                             }
-                            <input 
+                            <input
                                 type='text'
                                 placeholder='Username'
-                                value = {username}
-                                onChange = {(e) => 
+                                value={username}
+                                onChange={(e) =>
                                     dispatch({
-                                        type: FIELD, 
-                                        fieldName:'username', 
+                                        type: FIELD,
+                                        fieldName: 'username',
                                         payload: e.currentTarget.value
-                                        })
+                                    })
                                 }
                             />
-                            <input 
+                            <input
                                 type='text'
                                 placeholder='password'
-                                value = {password}
-                                onChange = {(e) => 
+                                value={password}
+                                onChange={(e) =>
                                     dispatch({
-                                        type: FIELD, 
-                                        fieldName:'password', 
+                                        type: FIELD,
+                                        fieldName: 'password',
                                         payload: e.currentTarget.value
-                                        })
+                                    })
                                 }
                             />
                             <button type='submit'>
@@ -141,10 +173,9 @@ const Loginusereducer = () => {
 
                         </form>
                     )
-                }
-            </div>
-        </div>
-    );
-}
+            }
 
-export default Loginusereducer;
+        </div>
+
+    )
+}
